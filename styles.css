@@ -7,7 +7,8 @@ body{
     margin: 0px;
     width: 100vw;
     height: 100vh;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: auto;
 }
 
 .container{
@@ -16,6 +17,7 @@ body{
     width: 100%;
     height: 100%;background: rgb(125,3,208);
     background: linear-gradient(346deg, rgba(125,3,208,1) 0%, rgba(24,207,197,1) 100%);
+    overflow-y: auto;
 }
 
 .container .main{
@@ -25,6 +27,7 @@ body{
     padding: 10px 4.2em;
     color: #2a232c;
     /* filter: blur(15px); */
+    overflow-y: auto;
 }
 
 .container .main h1{
@@ -32,9 +35,10 @@ body{
     margin-top: 0px;
     margin-bottom: 1rem;
     font-weight: bolder;
+    overflow-y: auto;
 }
 
-.container .main p{
+.container .main .mensaje{
     text-align: justify;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
@@ -122,4 +126,127 @@ h1{
 .warning-strip{
     width: 100%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* nuevos estilos */
+.links-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-rows: repeat(3,210px) ;
+    height: auto;
+    justify-content: center;
+}
+.final .links-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-rows: repeat(1,210px) ;
+    height: auto;
+    justify-content: center;
+}
+.card-link{
+    border: 1px solid black;
+    border-radius: 7px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-link .content{
+    height: 100%;
+    width: 100%;
+    padding: 7px 0px 0px 0px;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    /* overflow-x: hidden; */
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    color: rgb(223, 240, 235);
+}
+
+.card-link .title{
+    margin: 0px 0px 0px 4px;
+    padding: 0px 7px;
+    font-size: 23px;
+}
+
+.card-link p{
+    padding: 0px 7px;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 1em;
+    text-shadow: 0px 0px 5px black;
+    font-weight: 600;
+}
+.card-link p b{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.card-link-shadow{
+    position: absolute;
+    width: calc(100% + 8px) ;
+    height: calc(100% + 8px);
+    margin: -2px;
+    /* top: 1px;
+    left: 1px; */
+    z-index: 0;
+    background: rgb(18,0,23);
+    background: linear-gradient(358deg, rgba(18,0,23,1) 0%, rgba(24,7,29,0.9290091036414566) 20%, rgba(39,26,45,0.8393732492997199) 41%, rgba(79, 83, 81, 0.447) 78%, rgba(17, 10, 17, 0.642) 100%);
+}
+.card-link .artist{
+    
+}
+
+.card-link .time{
+}
+
+.card-link .status{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    align-self: flex-end;
+    padding: 3px 0px;
+    background: linear-gradient(90deg, rgba(116, 116, 116,.5) 5%,rgba(116, 116, 116,0.3) 20%, rgba(116, 116, 116,0.7) 50%, rgb(116, 116, 116,0.3) 80%, rgba(24,207,197,0) 95%);
+    color: white;
+}
+
+.card-link .status.completed{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    align-self: flex-end;
+    padding: 3px 0px;
+    background: linear-gradient(90deg, rgba(125,3,208,0) 5%,rgba(98, 216, 106,0.1) 20%, rgba(98, 216, 106,0.5) 50%, rgb(98, 216, 106,0.1) 80%, rgba(24,207,197,0) 95%) !important;
+    color: white;
+}
+
+.card-link .status.incompleted{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    align-self: flex-end;
+    padding: 3px 0px;
+    background: linear-gradient(90deg, rgba(125,3,208,0) 15%,rgba(123, 28, 47,0.3) 30%, rgba(123, 28, 47,0.7) 50%, rgb(123, 28, 47,0.3) 70%, rgba(24,207,197,0) 85%);
+    color: white
+}
+
+.card-link .status div{
+    width: 100%;
+}
+
+.card-link .link{
+    margin-top: .5rem;
+    padding: 6px 0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    width: 100%;
+    background: rgba(24,7,29,.2);
+    color: white;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width: 100%;
 }
